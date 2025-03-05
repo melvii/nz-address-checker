@@ -1,0 +1,23 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Resources:
+  AddressValidatorFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: app.handler  # Lambda function handler for your app.js
+      Runtime: nodejs18.x    # Node.js runtime version
+      CodeUri: address-validator/ # Path to your Lambda code directory
+      MemorySize: 128
+      Timeout: 10
+      Environment:
+        Variables:
+          NZ_POST_CLIENT_ID: "725afe950a39485da36b201ef3464b36"
+          NZ_POST_CLIENT_SECRET: "17DfE41c482D439abF3F365489aCc544"
+      Events:
+        ApiGateway:
+          Type: Api
+          Properties:
+            Path: /validate-address
+            Method: GET
+
+ 

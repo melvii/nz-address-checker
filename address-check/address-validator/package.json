@@ -1,0 +1,21 @@
+{
+  "name": "address-validator",
+  "version": "1.0.0",
+  "description": "AWS Lambda function for NZ Post Address Checker API",
+  "main": "app.js",
+  "scripts": {
+    "start": "sam local start-api",
+    "test": "jest",
+    "deploy": "sam build && sam deploy --guided"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1048.0",
+    "axios": "^1.4.0"
+  },
+  "devDependencies": {
+    "jest": "^29.6.0"
+  },
+  "author": "Your Name",
+  "license": "MIT"
+
+}
